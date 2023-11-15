@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -29,10 +30,10 @@ export class SignupComponent implements OnInit {
     this.userService.saveUsuario(this.user).subscribe(
       (data) => {
         console.log(data)
-        alert('Usuario guardado con éxito.');
+        Swal.fire('Usuario Registrado','Usuario registrado con exito en el sistema','success');
       },(error) => {
         console.log(error);
-        alert('Ha ocurrido un error en el sistema.')
+        Swal.fire('Error','Ha ocurrido un error en el sistema.','error');
       }
     )
 
