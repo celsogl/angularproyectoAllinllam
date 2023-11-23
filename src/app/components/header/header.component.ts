@@ -18,7 +18,7 @@ import { Route, Router } from '@angular/router';
             <a href="/">Inicio</a>
           </li>
           <li *ngIf="userLoginOn" class="px-4 py-2 text-teal-700 hover:text-customCyan">
-            <a href="/#">Paciente</a>
+            <a href="/listarPaciente">Paciente</a>
           </li>
           
           <li *ngIf="userLoginOn" class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown()">
@@ -79,7 +79,7 @@ export class HeaderComponent implements OnInit {
   userLoginOn: boolean = false;
 
   constructor(private loginService:LoginService, private router: Router){ } 
-  
+ 
   ngOnInit(): void {
    this.loginService.currentUserLoginOn.subscribe(
     {

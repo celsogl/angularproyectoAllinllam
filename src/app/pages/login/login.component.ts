@@ -9,13 +9,15 @@ import { loginRequest } from '../../services/loginRequest';
   selector: 'app-login',
   templateUrl: './login.component.html'
 })
-export class LoginComponent {
+export class LoginComponent{
 
 loginError: string ="";
 
 
+
+
   loginForm = this.formBuilder.group({
-    usuario:['',Validators.required],
+    username:['',Validators.required],
     pass:['',Validators.required],
   })
 
@@ -28,7 +30,7 @@ loginError: string ="";
   }
 
   get username(){
-    return this.loginForm.controls.usuario;
+    return this.loginForm.controls.username;
   }
 
   get pass(){
