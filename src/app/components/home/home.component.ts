@@ -1,10 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service';
+import { User } from '../../Entity/user';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './home.component.html'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
+  
+  userLoginOn:boolean=false;
+
+  constructor(private loginService: LoginService ){}
+  
+  ngOnDestroy(): void {
+  this.loginService.currentUserData.unsubscribe();
+  this.loginService.currentUserLoginOn.unsubscribe();
+  }
+
+  ngOnInit(): void {
+   this.loginService.currentUserLoginOn.subscribe({
+    next:(userLoginOn)=>{
+        this.userLoginOn=userLoginOn;
+    }
+   });
+  }
+
+  
 
 }

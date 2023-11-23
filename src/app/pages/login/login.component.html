@@ -19,17 +19,18 @@
 			<div
 				class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
 
-				<form>
+				<form [formGroup]="loginForm">
 					<div class="px-5 py-7">
 						<label class="font-semibold text-sm text-gray-600 pb-1 block">Usuario</label>
-						<input name="username" id="username" type="text"
+						<input formControlName="usuario" name="usuario" id="usuario" type="text"
 							class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
 						<label class="font-semibold text-sm text-gray-600 pb-1 block">Contraseña</label>
-						<input name="password" id="password" type="password"
+						<input formControlName="pass" name="pass" id="pass" type="password"
 							class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
-						<input type="submit" value="Iniciar Sesión"
+						<input type="submit" value="Iniciar Sesión" (click)="login()"
 							class="transition duration-200 bg-customCyan hover:bg-cyan-500 focus:bg-cyan-600 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block" />
-					</div>
+						</div>
+						<p class="text-red-800">{{loginError}}</p>
 				</form>
 
 				<div class="py-5">

@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service';
+import { Route, Router } from '@angular/router';
 
- @Component({
+@Component({
 
-    selector: 'app-header',
-    template: `<nav class="bg-white shadow shadow-slate-100 w-full px-4 md:px-8">
+  selector: 'app-header',
+  template: `<nav class="bg-white shadow shadow-slate-100 w-full px-4 md:px-8">
     <div class="container mx-auto flex items-center justify-between h-16">
       <!-- Logo aligned to the start -->
       <div class="flex-shrink-0">
@@ -15,11 +17,11 @@ import { Component } from '@angular/core';
           <li class="px-4 py-2 text-teal-700 hover:text-customCyan">
             <a href="/">Inicio</a>
           </li>
-          <li class="px-4 py-2 text-teal-700 hover:text-customCyan">
+          <li *ngIf="userLoginOn" class="px-4 py-2 text-teal-700 hover:text-customCyan">
             <a href="/#">Paciente</a>
           </li>
           
-          <li class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown()">
+          <li *ngIf="userLoginOn" class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown()">
             <a href="#" (click)="$event.preventDefault()">Atención Médica</a>
             <!-- Dropdown Menu Items -->
             <ul class="absolute hidden bg-white shadow-md mt-1" [class.hidden]="!isDropdownOpen">
@@ -29,7 +31,7 @@ import { Component } from '@angular/core';
               <!-- More dropdown items -->
             </ul>
           </li>
-          <li class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown2()">
+          <li  *ngIf="userLoginOn" class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown2()">
             <a href="#" (click)="$event.preventDefault()">Otros</a>
             <!-- Dropdown Menu Items -->
             <ul class="absolute hidden bg-white shadow-md mt-1" [class.hidden]="!isDropdownOpen2">
@@ -42,8 +44,10 @@ import { Component } from '@angular/core';
           </li>
         </ul>
       </div>
+      
+      
       <div class="order-2 md:order-3">
-      <button	class="px-3 py-2 bg-customCyan hover:bg-cyan-500 text-white rounded-lg flex items-center gap-2"
+      <button *ngIf="!userLoginOn"	class="px-3 py-2 bg-customCyan hover:bg-cyan-500 text-white rounded-lg flex items-center gap-2"
 						onclick="window.location.href='/login'">
 						<!-- Heroicons - Login Solid -->
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
@@ -54,15 +58,43 @@ import { Component } from '@angular/core';
 						</svg>
 						<span>Login</span>
 					</button>
+
+          <div class="flex justify-center" *ngIf="userLoginOn">
+								<button class="px-3 py-2 bg-customCyan hover:bg-cyan-500 text-white rounded-lg flex items-center gap-2" (click)="logout()"	type="button">
+									<span>Cerrar Sesión</span>
+								</button>
+							</div>
+				</div>
+
       </div>
-    </div>
+
   </nav>
   `
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isDropdownOpen = false;
   isDropdownOpen2 = false;
+
+  userLoginOn: boolean = false;
+
+  constructor(private loginService:LoginService, private router: Router){ } 
+  
+  ngOnInit(): void {
+   this.loginService.currentUserLoginOn.subscribe(
+    {
+      next:(userLoginOn)=> {
+          this.userLoginOn=userLoginOn;
+      }
+    }
+   )
+  }
+
+  logout(){
+    this.loginService.logout();
+    this.router.navigate(["/"]);
+  }
+
 
   toggleDropdown() {
     if (!this.isDropdownOpen) {
