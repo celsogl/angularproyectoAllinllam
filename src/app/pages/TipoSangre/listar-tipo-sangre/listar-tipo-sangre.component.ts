@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TipoSangre } from '../../../Entity/tipoSangre';
+import { TiposangreService } from '../../../services/tiposangre.service';
 
 @Component({
   selector: 'app-listar-tipo-sangre',
-  templateUrl: './listar-tipo-sangre.component.html',
-  styleUrl: './listar-tipo-sangre.component.css'
+  templateUrl: './listar-tipo-sangre.component.html'
 })
-export class ListarTipoSangreComponent {
+export class ListarTipoSangreComponent implements OnInit {
+
+
+  tiposDeSangre: TipoSangre[] = [];
+
+  constructor(private dataService: TiposangreService) { }
+ 
+ 
+  ngOnInit(): void {
+    this.dataService.obtenerTiposDeSangre().subscribe(data => {
+      this.tiposDeSangre = data;
+    });
+  }
 
 }

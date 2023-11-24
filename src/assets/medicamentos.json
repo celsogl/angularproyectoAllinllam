@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "descripcion": "Paracetamol"
+    },
+    {
+        "id": "2",
+        "descripcion": "Donepezilo"
+    },
+    {
+        "id": "3",
+        "descripcion": "Galantamina "
+    },
+    {
+        "id": "4",
+        "descripcion": "Naproxeno"
+    },
+    {
+        "id": "5",
+        "descripcion": "HIDROXIPROPILMETILCELULOSA HPMC + DEXTRAN"
+    },
+    {
+        "id": "6",
+        "descripcion": "NAFAZOLINA CLORHIDRATO"
+    }
+]

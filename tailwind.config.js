@@ -9,6 +9,9 @@ module.exports = {
         customCyan: {
           DEFAULT: 'rgb(39, 205, 206)',
         },
+        customred:{
+          DEFAULT: 'rgb(255, 127, 128)',
+        },
       },
     },
   },

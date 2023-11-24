@@ -12,7 +12,6 @@ export class UserService {
   constructor( private httpClient: HttpClient) { }
 
   
-  
   public saveUsuario(user:any){
     return this.httpClient.post(`${baseUrl}/usuarios/`,user);
   }

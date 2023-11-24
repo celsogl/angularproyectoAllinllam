@@ -1,0 +1,18 @@
+{
+    "dni": "1",
+    "nombre": "Mauricio",
+    "apellidoPate": "Gonzales",
+    "apellidoMate": "Leon",
+    "edad": 20,
+    "genero": "Masculino",
+    "fechaNacimiento": "2002/02/15",
+    "fechaRegistro": "2023/10/25",
+    "activo": 1,
+    "dniFamiliar": "71328477",
+    "nombreFamiliar": "Luis",
+    "apellidoPateFamiliar": "Centurión",
+    "apellidoMateFamiliar": "Leon",
+    "telefonoFamiliar": "936050132",
+    "direccion": "Los Geranios 123 Urb. El Recreo",
+    "parentesco": "Hermano"
+}
