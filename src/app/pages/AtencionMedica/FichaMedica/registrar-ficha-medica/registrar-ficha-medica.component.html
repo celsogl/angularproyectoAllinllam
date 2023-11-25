@@ -1,1 +1,206 @@
-<p>registrar-ficha-medica works!</p>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Ficha Medica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="flex flex-col h-screen">
+        <!-- TOP -->
+        <header class="p-0">
+            <app-header></app-header>
+        </header>
+
+
+        <div class="container mx-auto bg-white p-6 rounded shadow p-10">
+            <h2 class="text-2xl font-bold mb-4">Ficha Médica</h2>
+
+            <div class="mb-4">
+                <label for="alergias" class="font-semibold">Ingrese el DNI del Paciente: </label>
+                <input type="text" id="alergias" name="alergias" class="mt-1 p-2 border rounded w-full">
+            </div>
+
+            <div class="mb-4">
+                <label for="fechaExamen" class="font-semibold">Fecha del último examen médico completo:</label>
+                <input type="date" id="fechaExamen" name="fechaExamen" class="mt-1 p-2 border rounded w-full">
+            </div>
+
+            <div class="mb-4">
+                <label class="font-semibold">¿Ha tenido alguna cirugía, enfermedad o cambio en su estado de salud desde
+                    el último examen médico?</label>
+                <div class="mt-1">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="tratamiento" value="si" class="form-radio">
+                        <span class="ml-2">Sí</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6">
+                        <input type="radio" name="tratamiento" value="no" class="form-radio">
+                        <span class="ml-2">No</span>
+                    </label>
+                </div>
+            </div>
+
+
+            <!-- Tratamiento médico actual -->
+            <div class="mb-4">
+                <label class="font-semibold">¿Se encuentra actualmente bajo tratamiento médico o tomando
+                    medicamentos?</label>
+                <div class="mt-1">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="tratamiento" value="si" class="form-radio">
+                        <span class="ml-2">Sí</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6">
+                        <input type="radio" name="tratamiento" value="no" class="form-radio">
+                        <span class="ml-2">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Historial de enfermedades -->
+            <div class="mb-4">
+                <label class="font-semibold block mb-2">Tiene enfermedades (o historial) de:</label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Asma</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Bronquitis</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Diarrea</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Diabetes</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Hemofilia</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Epilepsia</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Problemas menstruales</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones pulmonares</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones cardiovasculares</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones renales</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones hepáticas</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones neurológicas</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones psiquiátricas</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones articulares</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones a los oídos</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox">
+                            <span class="ml-2">Afecciones a los ojos</span>
+                        </label>
+                        <!-- Repetir para cada enfermedad listada -->
+                    </div>
+                    <!-- Más columnas para otras enfermedades -->
+                </div>
+            </div>
+
+            <!-- Alergias y restricciones alimenticias -->
+            <div class="mb-4">
+                <label for="alergias" class="font-semibold">¿Es alérgico?</label>
+                <input type="text" id="alergias" name="alergias" placeholder="Comente..."
+                    class="mt-1 p-2 border rounded w-full">
+            </div>
+
+            <div class="mb-4">
+                <label class="font-semibold">¿Tiene restricciones alimenticias?</label>
+                <div class="mt-1">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="tratamiento" value="si" class="form-radio">
+                        <span class="ml-2">Sí</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6">
+                        <input type="radio" name="tratamiento" value="no" class="form-radio">
+                        <span class="ml-2">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="alergias" class="font-semibold">Tipo de Sangre: </label>
+                <input type="text" id="alergias" name="alergias" placeholder="Ingrese el grupo Sanguineo:"
+                    class="mt-1 p-2 border rounded w-full">
+            </div>
+
+            <!-- Tratamiento médico específico -->
+            <div class="mb-4">
+                <label for="tratamientoEspecifico" class="font-semibold">¿Presenta alguna condición emocional o física
+                    que pueda requerir especial atención?: </label>
+                <textarea id="tratamientoEspecifico" name="tratamientoEspecifico" class="mt-1 p-2 border rounded w-full"
+                    rows="3"></textarea>
+            </div>
+
+            <!-- Tratamiento médico específico -->
+            <div class="mb-4">
+                <label for="tratamientoEspecifico" class="font-semibold">Actualmente ¿Sigue algún tratamiento médico?
+                    Especifique:</label>
+                <textarea id="tratamientoEspecifico" name="tratamientoEspecifico" class="mt-1 p-2 border rounded w-full"
+                    rows="3"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="comentarios" class="font-semibold">En caso de medicación, indicar nombre del medicamento y
+                    dosis: </label>
+                <textarea id="comentarios" name="comentarios" class="mt-1 p-2 border rounded w-full"
+                    rows="3"></textarea>
+            </div>
+
+            <!-- Comentarios adicionales -->
+            <div class="mb-4">
+                <label for="comentarios" class="font-semibold">Utilice este espacio si desea incluir algún comentario
+                    respecto a su estado de salud:</label>
+                <textarea id="comentarios" name="comentarios" class="mt-1 p-2 border rounded w-full"
+                    rows="3"></textarea>
+            </div>
+
+            <div class="flex justify-end">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Enviar</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,1 +1,101 @@
-<p>registrar-paciente works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Registrar Paciente</title>
+</head>
+
+<body>
+  <div class="flex flex-col h-screen">
+    <!-- TOP -->
+    <header class="p-0">
+      <app-header></app-header>
+    </header>
+
+    <div class="flex flex-col h-screen justify-center items-center bg-gray-100">
+        <!-- Form container centered with smaller width -->
+        <main class="p-4 w-full max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+            
+            <form>
+                <div class="px-5 py-7">
+                    <label class="uppercase text-sm font-bold opacity-70">Ingrese el DNI:</label>
+                    <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                    <label class="uppercase text-sm font-bold opacity-70">Ingrese el Nombre:</label>
+                    <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                    <label class="uppercase text-sm font-bold opacity-70">Ingrese el Apellido Paterno:</label>
+                    <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+                    
+                    <label class="uppercase text-sm font-bold opacity-70">Ingrese el Apellido Materno:</label>
+                    <input  type="text"
+                    class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                    <label class="uppercase text-sm font-bold opacity-70">Ingrese la Edad:</label>
+                    <input  type="number"
+                    class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" min="0" />
+
+                    <label class="uppercase text-sm font-bold opacity-70">Ingrese la Fecha de Nacimiento:</label>
+                    <input  type="date"
+                    class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"/>
+                    <label class="uppercase text-sm font-bold opacity-70">Genero</label>
+                        <select  class="w-full p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
+                            <option selected>Selecciona una opción</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+
+
+                        <label class="uppercase text-sm font-bold opacity-70">Ingrese DNI del Familiar:</label>
+                        <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                        <label class="uppercase text-sm font-bold opacity-70">Ingrese Nombre del Familiar:</label>
+                        <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                        <label class="uppercase text-sm font-bold opacity-70">Ingrese Apellido Paterno del Familiar:</label>
+                        <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                        <label class="uppercase text-sm font-bold opacity-70">Ingrese Apellido Materno del Familiar:</label>
+                        <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                        <label class="uppercase text-sm font-bold opacity-70">Ingrese su Dirección:</label>
+                        <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                        <label class="uppercase text-sm font-bold opacity-70">Ingrese su Telefono del familiar:</label>
+                        <input  type="text"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                        <label class="uppercase text-sm font-bold opacity-70">Ingrese el parentesco:</label>
+                        <input  type="email"
+                        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+
+                    <button type="submit"
+                        class="btn btn-primary transition duration-200 bg-customCyan hover:bg-cyan-500 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                        <span class="inline-block mr-2">Registrar</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" class="w-4 h-4 inline-block">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+       
+        </main>
+    </div>
+
+    <!-- BOTTOM -->
+    <footer class="bg-gray-200 text-center lg:text-left">
+    </footer>
+  </div>
+</body>
+</html>

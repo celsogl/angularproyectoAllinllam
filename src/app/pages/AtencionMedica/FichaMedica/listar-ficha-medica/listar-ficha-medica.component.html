@@ -1,1 +1,223 @@
-<p>listar-ficha-medica works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listar Ficha Medica</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.3.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body >
+  <div class="flex flex-col h-screen justify-between ">
+    <!-- Header -->
+    <header class="text-white  p-4 text-xl font-semibold">
+      <app-header></app-header>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="px-4 py-2 flex-grow  ">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white overflow-hidden shadow rounded-lg">
+          <div class="px-4 py-5 sm:p-6">
+            <!-- Search -->
+            <div class="flex items-center mb-4">
+              <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </span>
+              <input type="text" class="flex-1 min-w-0 border-gray-300 focus:ring-blue-500 focus:border-blue-500 block w-full rounded-none rounded-r-md pl-4 sm:text-sm border" placeholder="Buscar...">
+            </div>
+            
+            <!-- Medical Record Card -->
+            <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6" *ngFor="let ficha of fichamedica">
+              <h3 class="text-lg leading-6 font-medium text-gray-900">Reporte Ficha Médica</h3>
+              <div class="mt-5 border-t border-gray-200 pt-4">
+                <dl>
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4">
+                    <dt class="text-sm font-medium text-gray-500">Nombre del Paciente:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ficha.idPaciente}}</dd>
+                  </div>
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Fecha del último examen médico completo:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ficha.fechaUltimoExamenCompleto}}</dd>
+                  </div>
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Ha tenido alguna cirugía, enfermedad o cambio en su estado de salud desde el último examen médico:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.cirujiaEnferdadCambio == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">¿Se encuentra actualmente bajo tratamiento médico o tomando medicamentos?:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.bajotratamiento == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+                  
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500 sm:col-span-3 justify-self-center">Tiene enfermedades (o historial) de :</dt>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Asma:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.asma == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Bronquitis:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.bronquitis == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Diarrea:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.diarrea == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Hemofilia:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.hemofilia == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Epilepsia:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.epilepsia == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Problemas Menstruales:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.problemasMestruales == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Pulmonar:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccionPulmonares == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Cardiovascular:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccionCardiovascular == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Renal:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccionRenales == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Hepatica:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccionesHepaticas == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Neurologica:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccianesNeurologicas == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Psiquiatrica:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccionesPsiquiatricas == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Articular:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccionesArticulares == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Oidos:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccionesOidos == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Afeccion Ojos:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.afeccionesOjos == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+                  
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">¿Es alérgico?</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.alergias == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div>
+
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">¿Tiene restricciones alimenticias?:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {{ ficha.restriccionesAlimenticias == 1 ? 'Sí' : 'No' }}
+                    </dd>
+                  </div> 
+                  
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Tipo de Sangre:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ficha.idTipodeSangre}}</dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">¿Presenta alguna condición emocional o física
+                      que pueda requerir especial atención?:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ficha.condicionEmocionalFisica}}</dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">¿Sigue algún tratamiento médico?
+                      </dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ficha.tratamientoActual}}</dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">En caso de medicación, indicar nombre del medicamento y
+                      dosis:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ficha.medicamentoydosis}}</dd>
+                  </div>
+
+                  <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-4 mt-4">
+                    <dt class="text-sm font-medium text-gray-500">Comentario respecto a su estado de salud:</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ficha.observaciones}}</dd>
+                  </div>
+
+
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+   
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+export interface FichaMedica {
+    id: string;
+    idPaciente:string;
+    idMedico:string;
+    idTipodeSangre:string;
+    fechaUltimoExamenCompleto: Date;
+    bajotratamiento: number;
+    cirujiaEnferdadCambio: number;
+    comentarioCirujia: string;
+    asma: number;
+    bronquitis: number;
+    diarrea: number;
+    hemofilia: number;
+    epilepsia: number;
+    problemasMestruales: number;
+    afeccionPulmonares: number;
+    afeccionCardiovascular: number;
+    afeccionRenales: number;
+    afeccionesHepaticas: number;
+    afeccianesNeurologicas: number;
+    afeccionesPsiquiatricas: number;
+    afeccionesArticulares: number;
+    afeccionesOidos: number;
+    afeccionesOjos: number;
+    alergias: number;
+    restriccionesAlimenticias: number;
+    condicionEmocionalFisica:string;
+    tratamientoActual:string;
+    medicamentoydosis:string;
+    observaciones:string;
+  }

@@ -1,1 +1,70 @@
-<p>listar-medicos works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Listar Medicos</title>
+</head>
+
+<body>
+    <div class="flex flex-col h-screen">
+        <!-- TOP -->
+        <header class="p-0">
+            <app-header></app-header>
+        </header>
+
+        <!-- MID -->
+        <main class="p-4 flex-grow">
+            <div class="p-6 w-full">
+                <div class="container ">
+                    <main class="p-4 flex-grow">
+                        <section class="container mx-auto p-6 font-mono">
+                            <button type="button" onclick="window.location.href='/createmedicos'"
+                                class="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-400 hover:shadow-lg focus:bg-gray-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out">
+                                Insert</button>
+                            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+                                <div class="w-full overflow-x-auto">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr
+                                                class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                                                <th class="px-4 py-3">DNI</th>
+                                                <th class="px-4 py-3">Nombre</th>
+                                                <th class="px-4 py-3">Apellidos</th>
+                                                <th class="px-4 py-3">Edad</th>
+                                                <th class="px-4 py-3">Especialidad</th>
+                                                <th class="px-4 py-3">Dirección</th>
+                                                <th class="px-4 py-3">Telefono</th>
+                                                <th class="px-4 py-3">Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white">
+                                            <tr class="text-gray-700" *ngFor="let medico of medicos">
+                                                <td class="px-4 py-3 text-sm border">{{medico.dni}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{medico.nombre}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{medico.apellidoPate}} {{medico.apellidoMate}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{medico.edad}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{medico.especialidad}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{medico.direccion}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{medico.telefono}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{medico.email}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+
+
+        </main>
+
+        <!-- BOTTOM -->
+        <footer class="bg-gray-200 text-center lg:text-left">
+        </footer>
+    </div>
+</body>
+
+</html>

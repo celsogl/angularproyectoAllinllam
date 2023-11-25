@@ -1,0 +1,35 @@
+[
+    {   
+        "id": "1",
+        "idPaciente":"Mauricio Gonzales Leon",
+        "idMedico": "Ricardo Alberto Gareca Nardi ",
+        "idTipodeSangre":"A+",
+        "fechaUltimoExamenCompleto": "10/08/2023",
+        "bajotratamiento": 1,
+        "cirujiaEnferdadCambio":0,
+        "comentarioCirujia": "-",
+        "asma": 0,
+        "bronquitis":0,
+        "diarrea":0,
+        "hemofilia":0,
+        "epilepsia":0,
+        "problemasMestruales":0,
+        "afeccionPulmonares":0,
+        "afeccionCardiovascular" :0,
+        "afeccionRenales":0,
+        "afeccionesHepaticas":0,
+        "afeccianesNeurologicas":0,
+        "afeccionesPsiquiatricas":1,
+        "afeccionesArticulares":1,
+        "afeccionesOidos":0,
+        "afeccionesOjos":0,
+        "alergias":1,
+        "restriccionesAlimenticias":1,
+        "condicionEmocionalFisica":"El paciente, cuenta con depresión (por confirmar) y presenta un problema de posible artritis en su mano",
+        "tratamientoActual":"No cuenta con ningún tratamiento",
+        "medicamentoydosis":"No toma ningún medicamento.",
+        "observaciones": "Al paciente se le recetara la medicina apropieda y se le dara el tratamiento adecuado. Se le derivará al área psicológica."
+    }
+]
+
+

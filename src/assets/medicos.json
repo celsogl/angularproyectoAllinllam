@@ -22,7 +22,7 @@
         "edad": "63",
         "fechaNacimiento": "1960/08/20",
         "genero": "Femenino",
-        "especialidad": "Psicologa",
+        "especialidad": "Neuropsicología",
         "direccion": "Calle Paris 110 Urb. San Nicolas",
         "telefono": "936050478",
         "email": "sandracarlin@gmail.com",
@@ -30,7 +30,7 @@
         "activo": 1
     },
     {  
-        "dni": "17811971",
+        "dni": "73147348",
         "nombre": "Maria",
         "apellidoPate": "Ascension",
         "apellidoMate": "Padilla",

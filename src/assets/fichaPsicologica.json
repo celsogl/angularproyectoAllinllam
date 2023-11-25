@@ -1,0 +1,18 @@
+[
+    {
+        "id":"1",
+       " idPaciente":"Mauricio Gonzales Leon",
+        "idMedico":"Sandra Carlin Gutierrez",
+        "idMedicamento":"Galantamina",
+        "numeroHermanos":"2",
+        "viveCon":"Padres",
+        "fechaEntrevista":"25/10/2023",
+        "motivoConsulta":"Consulta Rutinaria",
+        "antecedentesRelevantes":"En la ficha psicológica de Mauricio, se destacan antecedentes familiares de depresión, un historial personal de ansiedad durante la adolescencia. También menciona dificultades en las relaciones sociales y un patrón reciente de sueño irregular.",
+        "descripcionEstrategiaActividades":"En esta sesión inicial se estableció un rapport con el paciente, se recogió su historia clínica y se exploraron las principales áreas de preocupación. Se utilizó una entrevista semiestructurada para permitir que el paciente expresara libremente sus pensamientos y sentimientos, a la vez que se dirigía la conversación hacia temas pertinentes.",
+        "tecnicasInstrumentos":"Entrevista clínica semiestructurada, cuestionario de historia clínica",
+        "otros":"Se tomó nota de la necesidad de realizar una evaluación más profunda de los patrones de sueño del paciente debido a las menciones de insomnio.",
+        "fechaRegistro":"2023/10/25"
+    }
+]
+

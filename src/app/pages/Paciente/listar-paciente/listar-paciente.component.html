@@ -1,1 +1,78 @@
-<p>listar-paciente works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Listar Paciente</title>
+</head>
+
+<body>
+    <div class="flex flex-col h-screen">
+        <!-- TOP -->
+        <header class="p-0">
+            <app-header></app-header>
+        </header>
+
+        <!-- MID -->
+        <main class="p-4 flex-grow">
+            <div class="p-6 w-full">
+                <div class="container ">
+                    <main class="p-4 flex-grow">
+                        <section class="container mx-auto p-6 font-mono">
+                            <div class="flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>                                  
+                                <input type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Buscar...">
+                              </div>
+                              
+                            <button type="button" onclick="window.location.href='/createpaciente'"
+                                class="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-400 hover:shadow-lg focus:bg-gray-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out">
+                                Insert</button>
+                            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+                                <div class="w-full overflow-x-auto">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                                                <th class="px-4 py-3">DNI</th>
+                                                <th class="px-4 py-3">Nombre</th>
+                                                <th class="px-4 py-3">Apellidos</th>
+                                                <th class="px-4 py-3">Edad</th>
+                                                <th class="px-4 py-3">Nombre Familiar</th>
+                                                <th class="px-4 py-3">Apellidos Familiar</th>
+                                                <th class="px-4 py-3">Telefono Familiar</th>
+                                                <th class="px-4 py-3">Direccion</th>
+                                                <th class="px-4 py-3">Parentesco</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white">
+                                            <tr class="text-gray-700" *ngFor="let paciente of pacientes">
+                                                <td class="px-4 py-3 text-sm border">{{paciente.dni}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{paciente.nombre}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{paciente.apellidoPate}} {{paciente.apellidoMate}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{paciente.edad}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{paciente.nombreFamiliar}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{paciente.apellidoPateFamiliar}} {{paciente.apellidoMateFamiliar}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{paciente.telefonoFamiliar}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{paciente.direccion}}</td>
+                                                <td class="px-4 py-3 text-sm border">{{paciente.parentesco}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+
+
+        </main>
+
+        <!-- BOTTOM -->
+        <footer class="bg-gray-200 text-center lg:text-left">
+        </footer>
+    </div>
+</body>
+
+</html>

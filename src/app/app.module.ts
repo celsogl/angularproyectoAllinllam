@@ -18,13 +18,13 @@ import { ListarFichaTerapeuticaComponent } from './pages/AtencionMedica/FichaTer
 import { RegistrarFichaMedicaComponent } from './pages/AtencionMedica/FichaMedica/registrar-ficha-medica/registrar-ficha-medica.component';
 import { RegistrarFichaPsicologicaComponent } from './pages/AtencionMedica/FichaPsicologica/registrar-ficha-psicologica/registrar-ficha-psicologica.component';
 import { RegistrarFichaTerapeuticaComponent } from './pages/AtencionMedica/FichaTerapeutica/registrar-ficha-terapeutica/registrar-ficha-terapeutica.component';
-import { ListarUsuariosComponent } from './pages/Usuarios/listar-usuarios/listar-usuarios.component';
 import { ListarMedicamentosComponent } from './pages/Medicamentos/listar-medicamentos/listar-medicamentos.component';
 import { RegistrarMedicamentosComponent } from './pages/Medicamentos/registrar-medicamentos/registrar-medicamentos.component';
 import { ListarMedicosComponent } from './pages/Medicos/listar-medicos/listar-medicos.component';
 import { RegistrarMedicosComponent } from './pages/Medicos/registrar-medicos/registrar-medicos.component';
 import { ListarTipoSangreComponent } from './pages/TipoSangre/listar-tipo-sangre/listar-tipo-sangre.component';
 import { RegistrarTipoSangreComponent } from './pages/TipoSangre/registrar-tipo-sangre/registrar-tipo-sangre.component';
+import { ListarUsuariosComponent } from './pages/Usuarios/listar-usuarios/listar-usuarios.component';
 
 @NgModule({
   declarations: [ 
@@ -40,8 +40,8 @@ import { RegistrarTipoSangreComponent } from './pages/TipoSangre/registrar-tipo-
     ListarFichaTerapeuticaComponent,
     RegistrarFichaMedicaComponent,
     RegistrarFichaPsicologicaComponent,
-    RegistrarFichaTerapeuticaComponent,
     ListarUsuariosComponent,
+    RegistrarFichaTerapeuticaComponent,
     ListarMedicamentosComponent,
     RegistrarMedicamentosComponent,
     ListarMedicosComponent,

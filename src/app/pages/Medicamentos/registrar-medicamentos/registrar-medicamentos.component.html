@@ -1,1 +1,59 @@
-<p>registrar-medicamentos works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registrar Medicamentos</title>
+</head>
+
+<body>
+    <div class="flex flex-col h-screen">
+        <!-- TOP -->
+        <header class="p-0">
+            <app-header></app-header>
+        </header>
+
+        <div class="flex flex-col h-screen">
+            <!-- Other elements -->
+            <div class="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12">   
+            <main class="flex-grow flex items-center justify-center p-4">
+               
+                <div class="bg-white shadow w-full max-w-xs rounded-lg divide-y divide-gray-200">
+                    <!-- Your form here -->
+               
+                    <form>
+                        <div class="px-5 py-7">
+                            <label class="uppercase text-sm font-bold opacity-70">Ingrese el Nombre del Medicamento:</label> <input
+                                th:field="*{direccion}" type="text"
+                                class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
+                        
+                            <button type="submit"
+                                class="btn btn-primary transition duration-200 bg-customCyan hover:bg-cyan-500 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                                <span class="inline-block mr-2">Registrar</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="w-4 h-4 inline-block">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
+
+                        </div>
+                    </form> 
+
+
+                </div>
+                
+            </main>
+        </div>
+          
+        </div>
+        
+
+
+        <!-- BOTTOM -->
+        <footer class="bg-gray-200 text-center lg:text-left">
+        </footer>
+    </div>
+</body>
+
+</html>

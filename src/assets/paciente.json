@@ -1,5 +1,6 @@
+[
 {
-    "dni": "1",
+    "dni": "07958654",
     "nombre": "Mauricio",
     "apellidoPate": "Gonzales",
     "apellidoMate": "Leon",
@@ -16,3 +17,4 @@
     "direccion": "Los Geranios 123 Urb. El Recreo",
     "parentesco": "Hermano"
 }
+]

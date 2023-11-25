@@ -17,12 +17,12 @@ import { Route, Router } from '@angular/router';
           <li class="px-4 py-2 text-teal-700 hover:text-customCyan">
             <a href="/">Inicio</a>
           </li>
-          <li *ngIf="userLoginOn" class="px-4 py-2 text-teal-700 hover:text-customCyan">
+          <li  class="px-4 py-2 text-teal-700 hover:text-customCyan">
             <a href="/listar_paciente">Paciente</a>
           </li>
           
-          <li *ngIf="userLoginOn" class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown()">
-            <a (click)="$event.preventDefault()">Atención Médica</a>
+          <li  class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown()">
+            <a href="#" (click)="$event.preventDefault()">Atención Médica</a>
             <!-- Dropdown Menu Items -->
             <ul class="absolute hidden bg-white shadow-md mt-1" [class.hidden]="!isDropdownOpen">
               <li><a href="/listar_fichame" class="block px-4 py-2 text-teal-600 hover:bg-teal-100">Ficha Médica</a></li>
@@ -31,8 +31,8 @@ import { Route, Router } from '@angular/router';
               <!-- More dropdown items -->
             </ul>
           </li>
-          <li  *ngIf="userLoginOn" class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown2()">
-            <a (click)="$event.preventDefault()">Otros</a>
+          <li   class="px-4 py-2 text-teal-700 hover:text-customCyan relative" (click)="toggleDropdown2()">
+            <a href="#" (click)="$event.preventDefault()">Otros</a>
             <!-- Dropdown Menu Items -->
             <ul class="absolute hidden bg-white shadow-md mt-1" [class.hidden]="!isDropdownOpen2">
               <li><a href="/listar_usuario" class="block px-4 py-2 text-teal-600 hover:bg-teal-100">Usuario</a></li>
